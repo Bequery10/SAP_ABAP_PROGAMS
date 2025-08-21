@@ -5,22 +5,22 @@
 *&---------------------------------------------------------------------*
 REPORT ZTASK4.
 
-DATA: lt_data    TYPE TABLE OF ZTABLE,
+DATA: lt_data    TYPE TABLE OF ZFI_BUTCEVG_SATS,
       lt_fields  TYPE STANDARD TABLE OF DFIES,
       lt_export  TYPE STANDARD TABLE OF string,
       lv_line    TYPE string,
       lv_filename TYPE string.
 
-lv_filename = 'C:\Users\stajyersap\Desktop\ZTABLE.csv'.
+lv_filename = 'C:\Users\stajyersap\Desktop\ZFI_BUTCEVG_SATS.csv'.
 
 " Get field info dynamically
 CALL FUNCTION 'DDIF_FIELDINFO_GET'
   EXPORTING
-    tabname = 'ZTABLE'
+    tabname = 'ZFI_BUTCEVG_SATS'
   TABLES
     dfies_tab = lt_fields.
 
-SELECT * FROM ZTABLE INTO TABLE lt_data.
+SELECT * FROM ZFI_BUTCEVG_SATS INTO TABLE lt_data.
 
 " Write the header row to export table
 lv_line = ''.
@@ -39,7 +39,7 @@ LOOP AT lt_data INTO DATA(ls_row).
   LOOP AT lt_fields INTO DATA(ls_field1).
     ASSIGN COMPONENT ls_field1-fieldname OF STRUCTURE ls_row TO FIELD-SYMBOL(<value>).
     IF sy-subrc = 0.
-      DATA(lv_char) = ''.
+      DATA lv_char TYPE CHAR255.
       WRITE <value> TO lv_char.
       IF lv_line IS INITIAL.
         lv_line = lv_char.
