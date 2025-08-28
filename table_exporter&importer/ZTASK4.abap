@@ -116,8 +116,8 @@ FORM import USING dt_object TYPE REF TO data
 
   " Insert data into table
   IF lines( <lt_data> ) > 0.
-*    INSERT (iv_tabname) FROM TABLE <lt_data>.
-    cl_demo_output=>display(  <lt_data> ).
+    INSERT (iv_tabname) FROM TABLE <lt_data>.
+  
     IF sy-subrc = 0.
       WRITE: / 'Data imported successfully.'.
     ELSE.
@@ -205,11 +205,10 @@ FORM export USING dt_object TYPE REF TO data
       OTHERS = 1.
 
   IF sy-subrc = 0.
-     cl_demo_output=>display( <lt_data> ).
-*    INSERT (iv_tabname) FROM TABLE <lt_data>.
     WRITE: / 'File downloaded successfully to your Desktop.'.
   ELSE.
     WRITE: / 'File download failed.'.
   ENDIF.
 
 ENDFORM.
+
