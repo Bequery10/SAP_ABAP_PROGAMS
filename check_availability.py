@@ -4,8 +4,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-email_pass1 = "Aw534"  # password's first part
-email_pass2 = "mJ5qw"  # password's second part
+email_pass1 = "*****"  # password's first part
+email_pass2 = "*****"  # password's second part
 EMAIL_HOST = "smtp.office365.com"
 EMAIL_PORT = 587
 EMAIL_USER = "sas@mitasindustry.com"
