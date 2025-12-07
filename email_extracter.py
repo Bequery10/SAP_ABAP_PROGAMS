@@ -27,8 +27,8 @@ def fetch_emails_helper(file_name):
 EMAIL_HOST = "smtp.office365.com"
 EMAIL_PORT = 587
 EMAIL_USER = "sas@mitasindustry.com"
-email_password_part1 = "Aw534"
-email_password_part2 = "mJ5qw"
+email_password_part1 = "*****"
+email_password_part2 = "*****"
 EMAIL_PASSWORD = email_password_part1 + email_password_part2
 
 
