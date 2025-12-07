@@ -1,2 +1,2 @@
-# SAP_ABAP_PROGAMS
-Programs I developed during my internship in ABAP
+# Python and abap PROGAMS 
+Programs I developed during my internship in SAP abap department
